@@ -2,7 +2,7 @@ import styles from './page.module.css';
 import { User } from '../types';
 
 async function fetchUsers(): Promise<User[]> {
-  const res = await fetch('https://jsonplaceholder.typicode.com/users');
+  const res = await fetch('https://jsonplaceholder.typicode.com/users', { cache: "no-store" },);
   if (!res.ok) {
     throw new Error('Failed to fetch data');
   }
